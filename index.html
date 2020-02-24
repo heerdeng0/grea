@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>그레아 - 착한 부동산(GREA : Good Real Estate Agency)</title>
+	<link rel="shortcut icon" href="#">
+	<link rel="stylesheet" href="map/style.css" type="text/css">
+    <link rel="stylesheet" href="user/style.css" type="text/css">
+    <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+</head>
+<body>
+    <div id="map"></div>
+        
+    <div class="search_control" class="search_control_background">
+        <div class="option">
+            <div>
+                <!--<form onsubmit="searchPlaces(); return false;">-->
+                <form onsubmit="resizeWindow(); return false;">
+                    <input type="text" placeholder="검색어" id="keyword" size="15" onkeyup="enterkey()">
+                    <button type="submit">검색</button> 
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="map_control">
+        <div id="roadview_btn"><span>로드뷰</span></div>
+        <div class="map_control_tools radius_border">
+            <span id="district_btn" class="district_btn">지적</span>
+            <a id="district_btn_selected" class="district_btn_selected"></a>
+            <span id="terrain_btn" class="terrain_btn">지형</span>
+            <a id="terrain_btn_selected" class="terrain_btn_selected"></a>
+            <span id="bicycle_btn" class="bicycle_btn">자전거</span>
+            <a id="bicycle_btn_selected" class="bicycle_btn_selected"></a>
+        </div>
+    </div>
+
+    <a id="login_modal_btn" title="로그인" href="#"></a>
+
+    <div class="login_modal">
+        <div id="login_auth" class="login_auth">
+            <div class="login_auth_content">
+                <div id="login_auth_close_btn">&times;</div>
+                <div><a id="grea_id_login" href="#"></a></div>
+                <div id="naver_id_login" href="#"></div>
+                <div><a id="kako_id_login" href="#"></a></div>
+                <div id="facebook_id_login"></div>
+            </div>
+        </div>
+        <div id="grea_login_id" class="grea_login">
+            <div class="grea_login_content">
+                <div id="grea_login_close_btn">&times;</div>
+                <div><input id="grea_login_email" name="email" class="input email" type="text" placeholder="이메일"/></div>
+                <div><input id="grea_login_password" name="password" class="input password" type="password" placeholder="비밀번호"/></div>
+                <div><a id="grea_signin" href="#"></a></div>
+                <div><a id="grea_signup" href="#"></a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <div id="fb-root"></div>
+    <script async defer src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&autoLogAppEvents=1&version=v3.2&appId=383974355720838"></script>
+    -->
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- 네이버 로그인 -->
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
+    <!-- 다음 지도 -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f8b51815558ad25791e1a3c8dc2c2d8b&libraries=services"></script>
+    <!-- 다음 로그인 -->
+    <script src="http://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <!-- AWS -->
+    <script src="https://github.com/aws-amplify/amplify-js/tree/master/packages/amazon-cognito-identity-js"></script>
+    <script type="text/javascript" src="map/function.js"></script>
+    <script type="text/javascript" src="user/function.js"></script>
+    <script type="text/javascript" src="map/init.js"></script>
+    <script type="text/javascript" src="user/init.js"></script>
+</body>
+</html>
